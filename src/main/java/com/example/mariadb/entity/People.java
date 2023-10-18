@@ -8,6 +8,8 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
+@Table(name = "People")
 public class People {
     @Id
     @GeneratedValue

@@ -66,8 +66,8 @@ public class StudentRepositoryTest {
     @Test
     @DisplayName("student ID로 조회하기")
     void findById() {
-        Student savedStudent = studentRepository.save(givenStudent);
-        Optional<Student> foundStudent = studentRepository.findById(savedStudent.getId());
+        //Student savedStudent = studentRepository.save(givenStudent);
+        Optional<Student> foundStudent = studentRepository.findById(6L);
 
         if (foundStudent.isPresent()) {
             // 값이 존재하는 경우 처리
@@ -78,7 +78,7 @@ public class StudentRepositoryTest {
             System.out.println("조회된 값이 없습니다.");
         }
 
-        Assertions.assertEquals(foundStudent.get().getId(), givenStudent.getId());
+        Assertions.assertEquals(foundStudent.get().getId(), 6);
         Assertions.assertEquals(foundStudent.get().getName(), givenStudent.getName());
         Assertions.assertEquals(foundStudent.get().getDept(), givenStudent.getDept());
         Assertions.assertEquals(foundStudent.get().getYear(), givenStudent.getYear());

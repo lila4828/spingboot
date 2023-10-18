@@ -4,10 +4,12 @@ import com.example.mariadb.entity.Student;
 import com.example.mariadb.repository.StudentRepository;
 import com.example.mariadb.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.Optional;
 
+@Service
 public class StudentServiceImpl implements StudentService {
     private final StudentRepository studentRepository;
 
@@ -55,6 +57,5 @@ public class StudentServiceImpl implements StudentService {
         } else {
             throw new EntityNotFoundException();
         }
-
     }
 }
